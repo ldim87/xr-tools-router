@@ -179,6 +179,10 @@ class Router {
 		return $this->urlParts[$part] ?? false;
 	}
 
+	public function shiftUrlParts(){
+		return array_shift($this->urlParts);
+	}
+
 	/**
 	 * go_url_sanitize()
 	 * 

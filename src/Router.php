@@ -90,8 +90,6 @@ class Router {
 	}
 
 	/**
-	 * go_url_location()
-	 * 
 	 * Формирует новый относительный УРЛ с имеющимися _GET параметрами, если не задано иначе
 	 * @param  string 		$new_location 	Desired URL path without a leading slash
 	 * @param  array|NULL 	$query_params 	Forced URL query params or _GET if NULL (default)
@@ -105,8 +103,6 @@ class Router {
 	}
 
 	/**
-	 * url_get_params()
-	 * 
 	 * Возвращает офильтрованный от системных ключей $_GET массив
 	 * @param  boolean $flush_cache By default result array is cached in $GLOBALS['_GET_']. This option forces to flush this cache. Default: false
 	 * @return array                Filtered array
@@ -131,8 +127,6 @@ class Router {
 	}
 
 	/**
-	 * url_edit_params()
-	 * 
 	 * Убирает из текущих параметров УРЛ указанный параметр или список параметров
 	 * @param  string|array $skip_key 	Key name or key names in array
 	 * @return string           		New URL query string
@@ -158,8 +152,6 @@ class Router {
 	}
 
 	/**
-	 * get_url_part()
-	 * 
 	 * Возвращает запрашиваемую часть УРЛ (индекс в $this->urlParts). Можно использовать фильтр номеров страниц
 	 * @param  integer        $part         URL part index from $this->urlParts (URL array exploded by slashes)
 	 * @param  boolean        $page_number  Check if $part is number and return integer ("1" on error or if part is not found). Default: false (do not use filter)
@@ -184,8 +176,6 @@ class Router {
 	}
 
 	/**
-	 * go_url_sanitize()
-	 * 
 	 * @param  string|null $url [description]
 	 * @return [type]           [description]
 	 */

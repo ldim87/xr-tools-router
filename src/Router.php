@@ -7,8 +7,6 @@ namespace XrTools;
 
 /**
  * Custom URL router
- * 
- * :TODO:REFACTOR: translate docs
  */
 class Router {
 
@@ -171,6 +169,10 @@ class Router {
 		return $this->urlParts[$part] ?? false;
 	}
 
+	/**
+	 * [shiftUrlParts description]
+	 * @return [type] [description]
+	 */
 	public function shiftUrlParts(){
 		return array_shift($this->urlParts);
 	}

@@ -105,11 +105,9 @@ class Router {
 	 * @param  boolean $flush_cache By default result array is cached in $GLOBALS['_GET_']. This option forces to flush this cache. Default: false
 	 * @return array                Filtered array
 	 */
-	public function getUrlQuery(array $queryParams = null){
+	public function getUrlQuery(array $queryParams = null, array $urlQueryIgnoreParams = []){
 		// get params source
 		$tmp = $queryParams ?? $_GET;
-
-		$urlQueryIgnoreParams = [];
 
 		if($skip = $this->config->get('urlFromQueryParam')){
 			$urlQueryIgnoreParams[] = $skip;

@@ -16,7 +16,7 @@ class RouterException extends \Exception {
 	 */
 	function __construct(int $code, string $message = null){
 		// make sure everything is assigned properly
-        parent::__construct($message ?? '', $code);
+		parent::__construct($message ?? '', $code);
 	}
 
 }

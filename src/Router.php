@@ -49,6 +49,12 @@ class Router {
 		if(!isset($url)){
 			if($queryParam = $this->config->get('urlFromQueryParam')){
 				$url = $_GET[$queryParam] ?? null;
+
+				// if query param is not set, consider it home page
+				if(is_null($url)){
+					$url = '/';
+				}
+
 			} else {
 				$url = $this->config->get('url');
 			}

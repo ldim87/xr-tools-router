@@ -81,7 +81,7 @@ class Router {
 	 */
 	public function getUrl(){
 		// return page url
-		return $this->url;
+		return '/' . $this->url;
 	}
 	
 	/**

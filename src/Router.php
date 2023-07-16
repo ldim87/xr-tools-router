@@ -107,9 +107,10 @@ class Router {
 	}
 
 	/**
-	 * Возвращает офильтрованный от системных ключей $_GET массив
-	 * @param  boolean $flush_cache By default result array is cached in $GLOBALS['_GET_']. This option forces to flush this cache. Default: false
-	 * @return array                Filtered array
+	 * Возвращает $_GET массив отфильтрованный от системных ключей
+	 * @param  array|null $queryParams          Параметры, по умолчанию берется из $_GET
+	 * @param  array      $urlQueryIgnoreParams Игнорируемые системные ключи
+	 * @return array                            Результат
 	 */
 	public function getUrlQuery(array $queryParams = null, array $urlQueryIgnoreParams = []){
 		// get params source

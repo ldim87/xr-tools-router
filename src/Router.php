@@ -44,7 +44,7 @@ class Router {
 	 * [setUrl description]
 	 * @param string $url [description]
 	 */
-	public function setUrl(string $url = null) {
+	public function setUrl(?string $url = null) {
 
 		if(!isset($url)){
 			if($queryParam = $this->config->get('urlFromQueryParam')){
@@ -96,10 +96,10 @@ class Router {
 	/**
 	 * Формирует новый относительный УРЛ с имеющимися _GET параметрами, если не задано иначе
 	 * @param  string 		$new_location 	Desired URL path without a leading slash
-	 * @param  array|NULL 	$query_params 	Forced URL query params or _GET if NULL (default)
+	 * @param  array|null 	$query_params 	Forced URL query params or _GET if NULL (default)
 	 * @return string       				new URL path
 	 */
-	public function makeUrl(string $newLocation, array $newQueryParams = NULL){
+	public function makeUrl(string $newLocation, ?array $newQueryParams = null){
 		// get filtered $_GET
 		$query_params = $this->getUrlQuery($newQueryParams);
 		
@@ -112,7 +112,7 @@ class Router {
 	 * @param  array      $urlQueryIgnoreParams Игнорируемые системные ключи
 	 * @return array                            Результат
 	 */
-	public function getUrlQuery(array $queryParams = null, array $urlQueryIgnoreParams = []){
+	public function getUrlQuery(?array $queryParams = null, array $urlQueryIgnoreParams = []){
 		// get params source
 		$tmp = $queryParams ?? $_GET;
 
@@ -186,7 +186,7 @@ class Router {
 	 * @param  string|null $url [description]
 	 * @return [type]           [description]
 	 */
-	private function sanitizeUrl(string $url = null){
+	private function sanitizeUrl(?string $url = null){
 		
 		if(!isset($url)){
 			throw new RouterException(503, 'Request not set!');

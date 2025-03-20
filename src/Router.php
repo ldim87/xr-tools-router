@@ -34,6 +34,11 @@ class Router {
 	private $urlParts = [];
 
 	/**
+	 * @var string
+	 */
+	private $sanitizeRegexDefault = '/[^a-z0-9\/\-_]/';
+
+	/**
 	 * @param Config $config [description]
 	 */
 	function __construct(Config $config){
@@ -196,6 +201,8 @@ class Router {
 			return '';
 		}
 		
-		return rtrim(preg_replace('/[^a-z0-9\/\-_]/', '', strtolower(substr($url, 0, $this->maxUrlLength))), '/');
+		$sanitizeRegex = $this->config->get('urlSanitizeRegex') ?: $this->sanitizeRegexDefault;
+
+		return rtrim(preg_replace($sanitizeRegex, '', strtolower(substr($url, 0, $this->maxUrlLength))), '/');
 	}
 }
